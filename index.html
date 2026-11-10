@@ -1,0 +1,1996 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>AP Cupping Homepage Proposal</title>
+    <meta name="claude:viewport-fit-sides" content="cover" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Outfit:wght@500;600;700;800&display=swap"
+    />
+    <style>
+      /* AP Cupping Clinic – homepage proposal. Single committed look: the clinic's own black, cream, tan-gold and red.
+   Layout: one job per section, trust before every ask, booking always one tap away. */
+      :root {
+        --black: #141312;
+        --charcoal: #211f1d;
+        --cream: #f7f2ea;
+        --cream-deep: #efe6d8;
+        --white: #ffffff;
+        --line: #e6dccd;
+        --line-dark: #3a3632;
+        --ink: #151413;
+        --body: #4f4a44;
+        --muted: #6e675f;
+        --on-dark: #f5efe6;
+        --on-dark-muted: #bdb3a6;
+        --gold: #e3c78f;
+        --gold-deep: #8c6a2c;
+        --red: #b3262b;
+        --font-display: "Outfit", "Segoe UI", system-ui, sans-serif;
+        --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+        --wrap: 1180px;
+        color-scheme: light;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--white);
+        color: var(--body);
+        font-family: var(--font-body);
+        font-size: 1.125rem;
+        line-height: 1.65;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: var(--gold-deep);
+        text-underline-offset: 3px;
+      }
+      :focus-visible {
+        outline: 3px solid var(--red);
+        outline-offset: 3px;
+        border-radius: 6px;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: var(--font-display);
+        color: var(--ink);
+        margin: 0;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        text-wrap: balance;
+      }
+      h1 {
+        font-size: clamp(2.3rem, 5.2vw, 3.9rem);
+        font-weight: 800;
+      }
+      h2 {
+        font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+        font-weight: 800;
+      }
+      h3 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        letter-spacing: -0.015em;
+      }
+      p {
+        margin: 0;
+      }
+      .wrap {
+        max-width: var(--wrap);
+        margin-inline: auto;
+        padding-left: max(20px, env(safe-area-inset-left, 0px));
+        padding-right: max(20px, env(safe-area-inset-right, 0px));
+      }
+      .band {
+        padding-block: clamp(56px, 8vw, 96px);
+      }
+      .cream {
+        background: var(--cream);
+      }
+      .dark {
+        background: var(--black);
+        color: var(--on-dark-muted);
+      }
+      .dark h2,
+      .dark h3 {
+        color: var(--on-dark);
+      }
+      .stack {
+        display: grid;
+        gap: 18px;
+      }
+      .section-head {
+        display: grid;
+        gap: 14px;
+        max-width: 62ch;
+        margin-bottom: 40px;
+      }
+      .lede {
+        font-size: 1.28rem;
+        line-height: 1.55;
+        max-width: 56ch;
+      }
+      .ph {
+        background: var(--cream-deep);
+        border: 1px dashed #cdbfa9;
+        color: var(--muted);
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 16px;
+        font-size: 0.95rem;
+      }
+      .todo {
+        background: #fff4d6;
+        color: #6b4e12;
+        border-radius: 4px;
+        padding: 0 4px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      /* Proposal notice */
+      .proposal {
+        background: var(--red);
+        color: var(--white);
+        font-size: 0.95rem;
+        padding-block: 8px;
+      }
+      .proposal .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 4px 16px;
+      }
+      .proposal .todo {
+        background: var(--white);
+        color: var(--red);
+      }
+
+      /* Header */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0 0 auto;
+        height: env(safe-area-inset-top, 0px);
+        z-index: 30;
+        background: var(--black);
+      }
+      .site-header {
+        position: sticky;
+        top: env(safe-area-inset-top, 0px);
+        z-index: 20;
+        background: var(--black);
+        border-bottom: 1px solid var(--line-dark);
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        min-height: 76px;
+        position: relative;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        margin-right: auto;
+      }
+      .logo {
+        width: 46px;
+        height: 46px;
+        border-radius: 10px;
+        background: var(--red);
+        color: var(--white);
+        display: grid;
+        place-items: center;
+        font: 800 1.15rem var(--font-display);
+        letter-spacing: -0.04em;
+      }
+      .brand-name {
+        font: 700 1.15rem/1.1 var(--font-display);
+        color: var(--on-dark);
+        white-space: nowrap;
+      }
+      .brand-name small {
+        display: block;
+        font: 400 0.85rem var(--font-body);
+        color: var(--on-dark-muted);
+        margin-top: 3px;
+      }
+      .nav {
+        display: flex;
+        gap: 4px;
+      }
+      .nav a {
+        color: var(--on-dark);
+        text-decoration: none;
+        padding: 10px 12px;
+        border-radius: 8px;
+        white-space: nowrap;
+        font-size: 1rem;
+      }
+      .nav a:hover {
+        background: var(--charcoal);
+      }
+      .nav a[aria-current="page"] {
+        color: var(--gold);
+        font-weight: 700;
+      }
+      .header-call {
+        color: var(--on-dark);
+        font-weight: 700;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 12px 24px;
+        border-radius: 999px;
+        border: 2px solid transparent;
+        font: 700 1.06rem/1.2 var(--font-body);
+        text-decoration: none;
+        cursor: pointer;
+        white-space: nowrap;
+        transition:
+          background-color 0.15s,
+          color 0.15s;
+      }
+      .btn-gold {
+        background: var(--gold);
+        color: var(--ink);
+      }
+      .btn-gold:hover {
+        background: #d8b979;
+        color: var(--ink);
+      }
+      .btn-line {
+        background: transparent;
+        color: var(--ink);
+        border-color: var(--ink);
+      }
+      .btn-line:hover {
+        background: var(--ink);
+        color: var(--white);
+      }
+      .dark .btn-line,
+      .hero .btn-line {
+        color: var(--on-dark);
+        border-color: var(--on-dark);
+      }
+      .dark .btn-line:hover,
+      .hero .btn-line:hover {
+        background: var(--on-dark);
+        color: var(--black);
+      }
+      .btn-small {
+        min-height: 44px;
+        padding: 8px 18px;
+        font-size: 1rem;
+      }
+      .btn-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .menu-btn {
+        display: none;
+      }
+
+      /* Hero */
+      .hero {
+        position: relative;
+        background: var(--black);
+        color: var(--on-dark-muted);
+        overflow: hidden;
+      }
+      .hero-media {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(20, 19, 18, 0.96) 0%,
+            rgba(20, 19, 18, 0.86) 48%,
+            rgba(20, 19, 18, 0.55) 100%
+          ),
+          repeating-linear-gradient(135deg, #2a2724 0 22px, #24211f 22px 44px);
+      }
+      .hero-media span {
+        position: absolute;
+        right: 24px;
+        bottom: 18px;
+        font-size: 0.85rem;
+        color: var(--on-dark-muted);
+        border: 1px dashed var(--line-dark);
+        padding: 4px 10px;
+        border-radius: 6px;
+      }
+      .hero-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+        gap: clamp(32px, 5vw, 72px);
+        align-items: center;
+        padding-block: clamp(56px, 8vw, 104px);
+      }
+      .hero-copy {
+        display: grid;
+        gap: 22px;
+        min-width: 0;
+      }
+      .hero h1 {
+        color: var(--white);
+      }
+      .hero .lede {
+        color: var(--on-dark);
+      }
+      .hero .kicker {
+        color: var(--gold);
+        font-weight: 700;
+      }
+      .visit {
+        background: var(--white);
+        border-radius: 22px;
+        padding: 28px;
+        display: grid;
+        gap: 16px;
+        min-width: 0;
+        color: var(--body);
+      }
+      .visit h2 {
+        font-size: 1.6rem;
+      }
+      .visit ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 14px;
+      }
+      .visit li {
+        display: grid;
+        grid-template-columns: 30px 1fr;
+        gap: 12px;
+      }
+      .tick {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: var(--cream);
+        color: var(--red);
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+      }
+      .visit strong {
+        display: block;
+        color: var(--ink);
+      }
+      .price-line {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+        padding-top: 16px;
+        border-top: 1px dashed var(--line);
+      }
+      .price-line b {
+        font: 800 1.8rem var(--font-display);
+        color: var(--ink);
+      }
+
+      /* Trust strip */
+      .trust {
+        background: var(--white);
+        border-bottom: 1px solid var(--line);
+      }
+      .trust ul {
+        list-style: none;
+        margin: 0 auto;
+        padding-block: 22px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+      }
+      .trust li {
+        display: grid;
+        gap: 2px;
+        min-width: 0;
+      }
+      .trust strong {
+        color: var(--ink);
+        font-size: 1.08rem;
+      }
+      .trust span {
+        color: var(--muted);
+        font-size: 0.98rem;
+      }
+      .trust .stars,
+      .stars {
+        color: var(--gold-deep);
+        letter-spacing: 2px;
+      }
+
+      /* Finder */
+      .finder {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+        gap: clamp(24px, 4vw, 56px);
+        align-items: start;
+      }
+      .area-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+      .area-btn {
+        min-height: 62px;
+        padding: 12px 16px;
+        text-align: left;
+        background: var(--white);
+        color: var(--ink);
+        border: 2px solid var(--line);
+        border-radius: 14px;
+        font: 700 1.06rem var(--font-body);
+        cursor: pointer;
+      }
+      .area-btn:hover {
+        border-color: var(--gold-deep);
+      }
+      .area-btn[aria-pressed="true"] {
+        background: var(--black);
+        border-color: var(--black);
+        color: var(--white);
+      }
+      .answer {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: clamp(22px, 3vw, 34px);
+        display: grid;
+        gap: 16px;
+        min-width: 0;
+      }
+      .answer .picked {
+        color: var(--muted);
+        font-size: 0.98rem;
+      }
+      .answer ul {
+        margin: 0;
+        padding-left: 1.2em;
+        display: grid;
+        gap: 6px;
+      }
+      .answer-meta {
+        display: grid;
+        gap: 4px;
+        color: var(--ink);
+        font-weight: 700;
+        font-size: 1rem;
+      }
+
+      /* Steps */
+      .steps {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+        counter-reset: s;
+      }
+      .steps li {
+        counter-increment: s;
+        display: grid;
+        gap: 10px;
+        align-content: start;
+        min-width: 0;
+      }
+      .steps li::before {
+        content: counter(s);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--black);
+        color: var(--gold);
+        display: grid;
+        place-items: center;
+        font: 800 1.15rem var(--font-display);
+      }
+
+      /* Treatments */
+      .treat-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .treat {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+        display: grid;
+        grid-template-rows: auto 1fr;
+        min-width: 0;
+      }
+      .treat .ph {
+        aspect-ratio: 16 / 10;
+        border: 0;
+        border-bottom: 1px dashed #cdbfa9;
+      }
+      .treat-body {
+        padding: 22px;
+        display: grid;
+        gap: 10px;
+        align-content: start;
+      }
+      .treat-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 16px;
+        font-weight: 700;
+        color: var(--ink);
+        font-size: 1rem;
+      }
+      .treat-body a {
+        font-weight: 700;
+        color: var(--ink);
+      }
+      .treat--wide {
+        grid-column: span 2;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-rows: auto;
+      }
+      .treat--wide .ph {
+        aspect-ratio: auto;
+        min-height: 220px;
+        height: 100%;
+        border-bottom: 0;
+        border-right: 1px dashed #cdbfa9;
+      }
+      .treat .ph {
+        min-height: 0;
+      }
+      .treat--full {
+        grid-column: 1 / -1;
+      }
+
+      /* Proof */
+      .proof {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: clamp(28px, 5vw, 64px);
+        align-items: center;
+      }
+      .proof .ph {
+        aspect-ratio: 4 / 5;
+        max-height: 560px;
+        border-radius: 22px;
+        background: var(--charcoal);
+        border-color: var(--line-dark);
+        color: var(--on-dark-muted);
+      }
+      .names {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .names li {
+        border: 1px solid var(--line-dark);
+        border-radius: 999px;
+        padding: 6px 14px;
+        color: var(--on-dark);
+        font-size: 0.98rem;
+      }
+
+      /* Team (Z-layout) */
+      .row {
+        display: grid;
+        grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
+        gap: clamp(28px, 6vw, 88px);
+        align-items: center;
+      }
+      .row + .row {
+        margin-top: clamp(56px, 7vw, 96px);
+      }
+      .row:nth-child(even) {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
+      }
+      .row:nth-child(even) .ph {
+        order: 2;
+      }
+      .row .ph {
+        aspect-ratio: 1 / 1;
+        border-radius: 22px;
+      }
+      .row .copy {
+        display: grid;
+        gap: 14px;
+        max-width: 560px;
+        min-width: 0;
+      }
+      .role {
+        color: var(--gold-deep);
+        font-weight: 700;
+        font-size: 0.85rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .tags {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .tags li {
+        background: var(--cream);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 6px 14px;
+        font-size: 0.95rem;
+        color: var(--ink);
+      }
+
+      /* Reviews */
+      .reviews {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .review {
+        margin: 0;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 24px;
+        display: grid;
+        gap: 12px;
+        align-content: start;
+      }
+      .review blockquote {
+        margin: 0;
+        color: var(--muted);
+        font-style: italic;
+      }
+      .review figcaption {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      /* FAQ */
+      .split {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+        gap: clamp(28px, 5vw, 64px);
+        align-items: start;
+      }
+      .faq {
+        display: grid;
+        gap: 10px;
+      }
+      .faq details {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+      }
+      .faq summary {
+        cursor: pointer;
+        padding: 18px 20px;
+        font-weight: 700;
+        color: var(--ink);
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .faq summary::-webkit-details-marker {
+        display: none;
+      }
+      .faq summary::after {
+        content: "+";
+        color: var(--gold-deep);
+        font-size: 1.4rem;
+        line-height: 1;
+      }
+      .faq details[open] summary::after {
+        content: "–";
+      }
+      .faq details > div {
+        padding: 0 20px 20px;
+      }
+
+      /* Location */
+      .panel {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: clamp(22px, 3vw, 30px);
+        display: grid;
+        gap: 14px;
+        min-width: 0;
+      }
+      .check {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 10px;
+      }
+      .check li {
+        position: relative;
+        padding-left: 32px;
+      }
+      .check li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--cream);
+        color: var(--red);
+        font-size: 0.8rem;
+        font-weight: 700;
+        display: grid;
+        place-items: center;
+      }
+      .hours {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .hours td {
+        padding: 8px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .hours td:last-child {
+        text-align: right;
+        color: var(--ink);
+        font-weight: 700;
+      }
+      address {
+        font-style: normal;
+        color: var(--ink);
+      }
+
+      /* CTA */
+      .cta {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) auto;
+        gap: 28px;
+        align-items: center;
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--black);
+        color: var(--on-dark-muted);
+        padding-block: 56px 110px;
+        font-size: 1rem;
+        border-top: 1px solid var(--line-dark);
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+        gap: 32px;
+      }
+      .footer h2 {
+        font-size: 1.05rem;
+        color: var(--on-dark);
+        margin-bottom: 12px;
+      }
+      .footer ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 8px;
+      }
+      .footer a {
+        color: var(--on-dark-muted);
+      }
+      .footer address {
+        color: var(--on-dark-muted);
+      }
+      .footer-small {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid var(--line-dark);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 0.92rem;
+      }
+
+      .action-bar {
+        display: none;
+      }
+
+      @media (max-width: 1100px) {
+        .nav,
+        .header-call {
+          display: none;
+        }
+        .menu-btn {
+          display: inline-flex;
+          color: var(--on-dark);
+          border-color: var(--on-dark);
+          background: transparent;
+        }
+        .nav.open {
+          display: grid;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--black);
+          border-bottom: 1px solid var(--line-dark);
+          padding: 12px max(20px, env(safe-area-inset-right, 0px)) 20px
+            max(20px, env(safe-area-inset-left, 0px));
+        }
+      }
+      @media (max-width: 960px) {
+        .hero-grid,
+        .finder,
+        .proof,
+        .split,
+        .cta {
+          grid-template-columns: 1fr;
+        }
+        .trust ul,
+        .steps {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .treat-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .treat--wide {
+          grid-column: span 2;
+        }
+        .treat--full {
+          grid-column: 1 / -1;
+        }
+        .reviews {
+          grid-template-columns: 1fr;
+        }
+        .row,
+        .row:nth-child(even) {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+        .row:nth-child(even) .ph {
+          order: 0;
+        }
+        .row .ph {
+          max-width: 420px;
+        }
+        .proof .ph {
+          max-width: 440px;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .action-bar {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+          position: fixed;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 40;
+          background: var(--black);
+          border-top: 1px solid var(--line-dark);
+          padding: 10px max(16px, env(safe-area-inset-right, 0px))
+            calc(10px + env(safe-area-inset-bottom, 0px))
+            max(16px, env(safe-area-inset-left, 0px));
+        }
+        .action-bar .btn-line {
+          color: var(--on-dark);
+          border-color: var(--on-dark);
+        }
+      }
+      @media (max-width: 600px) {
+        .header-cta {
+          display: none;
+        }
+        .brand-name small {
+          white-space: normal;
+        }
+        .header-inner {
+          gap: 12px;
+        }
+        .area-grid,
+        .steps,
+        .treat-grid {
+          grid-template-columns: 1fr;
+        }
+        .treat--wide,
+        .treat--full {
+          grid-column: auto;
+          grid-template-columns: 1fr;
+        }
+        .treat--wide .ph {
+          aspect-ratio: 16 / 10;
+          border-right: 0;
+          border-bottom: 1px dashed #cdbfa9;
+        }
+        .trust ul {
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .btn-row .btn {
+          width: 100%;
+          white-space: normal;
+          text-align: center;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+        }
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": ["HealthAndBeautyBusiness", "Physiotherapy"],
+        "@id": "https://apcupping.com/#clinic",
+        "name": "AP Cupping Clinic",
+        "url": "https://apcupping.com/",
+        "telephone": "+447972592347",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Central Business Park, Nelson Street",
+          "addressLocality": "Bolton",
+          "postalCode": "BL3 2JW",
+          "addressCountry": "GB"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 53.567273,
+          "longitude": -2.4247939
+        },
+        "hasMap": "https://www.google.com/maps/place/AP+Cupping+Clinic/@53.567273,-2.4273688,17z/data=!3m1!4b1!4m6!3m5!1s0x487ba725292ef52f:0x26dbd09feeb68b5f!8m2!3d53.567273!4d-2.4247939!16s%2Fg%2F11zbrm_ns1",
+        "sameAs": [
+          "https://www.google.com/maps/place/AP+Cupping+Clinic/@53.567273,-2.4273688,17z/data=!3m1!4b1!4m6!3m5!1s0x487ba725292ef52f:0x26dbd09feeb68b5f!8m2!3d53.567273!4d-2.4247939!16s%2Fg%2F11zbrm_ns1",
+          "https://widget.treatwell.co.uk/place/543574/"
+        ],
+        "areaServed": [
+          "Bolton",
+          "Farnworth",
+          "Little Lever",
+          "Kearsley",
+          "Horwich",
+          "Westhoughton",
+          "Breightmet"
+        ],
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sports massage",
+              "areaServed": "Bolton"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Physiotherapy",
+              "areaServed": "Bolton"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Hijama (wet cupping)",
+              "areaServed": "Bolton"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Dry cupping",
+              "areaServed": "Bolton"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Dry needling",
+              "areaServed": "Bolton"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Signature recovery",
+              "areaServed": "Bolton"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main" style="position: absolute; left: -999px"
+      >Skip to content</a
+    >
+    <div class="proposal">
+      <div class="wrap">
+        <span
+          >Homepage proposal for AP Cupping Clinic by Kasam Khan Web
+          Consulting</span
+        >
+        
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="#main"
+          ><span class="logo" aria-hidden="true">AP</span
+          ><span class="brand-name"
+            >AP Cupping Clinic<small
+              >Physio &amp; recovery in Bolton</small
+            ></span
+          ></a
+        >
+        <nav class="nav" id="site-nav" aria-label="Main">
+          <a href="#main" aria-current="page">Home</a
+          ><a href="#treatments">Treatments</a><a href="#team">Our team</a
+          ><a href="#reviews">Results</a><a href="#find-us">Find us</a>
+        </nav>
+        <a class="header-call" href="tel:+447972592347">07972 592347</a>
+        <a
+          class="btn btn-gold btn-small header-cta"
+          href="https://widget.treatwell.co.uk/place/543574/menu/"
+          target="_blank"
+          rel="noopener"
+          >Check availability</a
+        >
+        <button
+          class="btn btn-small menu-btn"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          Menu
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <span>Existing clinic video plays here</span>
+        </div>
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">
+              AP Cupping Clinic, inside Just Padel, Nelson Street, Bolton BL3
+            </p>
+            <h1 id="hero-title">
+              Sports massage, physiotherapy and hijama in Bolton
+            </h1>
+            <p class="lede">
+              Back pain, a training injury or stiffness that won't shift? Our
+              senior physios and recovery therapists find the cause and treat
+              it. No GP referral needed.
+            </p>
+            <div class="btn-row">
+              <a
+                class="btn btn-gold"
+                href="https://widget.treatwell.co.uk/place/543574/menu/"
+                target="_blank"
+                rel="noopener"
+                >Check availability</a
+              ><a class="btn btn-line" href="tel:+447972592347"
+                >Call 07972 592347</a
+              >
+            </div>
+          </div>
+          <aside class="visit" aria-labelledby="visit-title">
+            <h2 id="visit-title">Your first visit to AP Cupping Clinic</h2>
+            <ul>
+              <li>
+                <span class="tick" aria-hidden="true">✓</span
+                ><span
+                  ><strong>A proper assessment</strong>We find out what's
+                  causing the problem, not just where it hurts</span
+                >
+              </li>
+              <li>
+                <span class="tick" aria-hidden="true">✓</span
+                ><span
+                  ><strong>Treatment the same day</strong>Hands-on work starts
+                  in your first session</span
+                >
+              </li>
+              <li>
+                <span class="tick" aria-hidden="true">✓</span
+                ><span
+                  ><strong>A clear plan</strong>What to do at home and how many
+                  sessions you'll need</span
+                >
+              </li>
+            </ul>
+            <div class="price-line">
+              <span>Physio assessment</span
+              ><b><span class="todo">£[xx]</span></b>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="trust" aria-label="Why clients choose AP">
+        <ul class="wrap">
+          <li>
+            <strong
+              ><span class="stars" aria-hidden="true">★★★★★</span>
+              <span class="todo">[4.9]</span> on Google</strong
+            ><span
+              ><a
+                href="https://www.google.com/maps/place/AP+Cupping+Clinic/@53.567273,-2.4273688,17z/data=!3m1!4b1!4m6!3m5!1s0x487ba725292ef52f:0x26dbd09feeb68b5f!8m2!3d53.567273!4d-2.4247939!16s%2Fg%2F11zbrm_ns1"
+                target="_blank"
+                rel="noopener"
+                >Read <span class="todo">[xx]</span> reviews</a
+              ></span
+            >
+          </li>
+          <li>
+            <strong>Senior physiotherapists</strong
+            ><span><span class="todo">[HCPC-registered]</span></span>
+          </li>
+          <li>
+            <strong>Trusted by pro athletes</strong
+            ><span>Boxers, footballers and fighters</span>
+          </li>
+          <li>
+            <strong>1,000+ clients treated</strong
+            ><span>Private clinic, Bolton BL3</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="band" aria-labelledby="finder-title">
+        <div class="wrap finder">
+          <div class="stack">
+            <h2 id="finder-title">
+              Find the right treatment at our Bolton clinic
+            </h2>
+            <p>
+              Tell us what's bothering you. We'll show you who you'll see and
+              whether to book sports massage, physiotherapy, hijama or dry
+              needling.
+            </p>
+            <div
+              class="area-grid"
+              role="group"
+              aria-label="Choose what's bothering you"
+            >
+              <button
+                class="area-btn"
+                type="button"
+                data-k="injury"
+                aria-pressed="true"
+              >
+                Pain or injury
+              </button>
+              <button
+                class="area-btn"
+                type="button"
+                data-k="tension"
+                aria-pressed="false"
+              >
+                Back, neck or shoulder tension
+              </button>
+              <button
+                class="area-btn"
+                type="button"
+                data-k="training"
+                aria-pressed="false"
+              >
+                Training recovery
+              </button>
+              <button
+                class="area-btn"
+                type="button"
+                data-k="hijama"
+                aria-pressed="false"
+              >
+                Hijama or cupping
+              </button>
+              <button
+                class="area-btn"
+                type="button"
+                data-k="needling"
+                aria-pressed="false"
+              >
+                Tight knots and trigger points
+              </button>
+              <button
+                class="area-btn"
+                type="button"
+                data-k="unsure"
+                aria-pressed="false"
+              >
+                I'm not sure
+              </button>
+            </div>
+          </div>
+          <div class="answer" id="answer" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="band cream" aria-labelledby="steps-title">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="steps-title">How booking works at AP Cupping Clinic</h2>
+          </div>
+          <ol class="steps">
+            <li>
+              <h3>Book online or call</h3>
+              <p>
+                See live availability on Treatwell, or ring AP to talk it
+                through.
+              </p>
+            </li>
+            <li>
+              <h3>Get assessed</h3>
+              <p>
+                Your practitioner finds out what's going on and what you need to
+                get back to.
+              </p>
+            </li>
+            <li>
+              <h3>Get treated</h3>
+              <p>
+                Physio, massage, needling or cupping, chosen for your problem.
+              </p>
+            </li>
+            <li>
+              <h3>Follow your plan</h3>
+              <p>
+                Leave knowing what to do at home and whether you need to come
+                back.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="band" id="treatments" aria-labelledby="treat-title">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="treat-title">Treatments at AP Cupping Clinic, Bolton</h2>
+            <p>
+              The same services you'll find on our Google profile and Treatwell
+              menu, with prices shown before you book.
+            </p>
+          </div>
+          <div class="treat-grid">
+            <article class="treat treat--wide">
+              <div
+                class="ph"
+                role="img"
+                aria-label="Placeholder: sports massage at AP Cupping Clinic, Bolton"
+              >
+                Sports massage photo
+              </div>
+              <div class="treat-body">
+                <h3>Sports massage in Bolton</h3>
+                <p>
+                  Firm, targeted massage for tight muscles, training fatigue and
+                  stiff backs, necks and shoulders. Our most booked treatment.
+                </p>
+                <div class="treat-meta">
+                  <span>From <span class="todo">£[xx]</span></span
+                  ><span>No injury needed</span>
+                </div>
+                <a href="https://apcupping.com/treatments/#sports-massage"
+                  >More about sports massage</a
+                >
+              </div>
+            </article>
+            <article class="treat">
+              <div
+                class="ph"
+                role="img"
+                aria-label="Placeholder: physiotherapy assessment in Bolton"
+              >
+                Physiotherapy photo
+              </div>
+              <div class="treat-body">
+                <h3>Physiotherapy</h3>
+                <p>
+                  Assessment, treatment and a rehab plan for pain, injuries and
+                  joint problems. No GP referral needed.
+                </p>
+                <div class="treat-meta">
+                  <span>From <span class="todo">£[xx]</span></span>
+                </div>
+                <a href="https://apcupping.com/treatments/#physiotherapy"
+                  >More about physiotherapy</a
+                >
+              </div>
+            </article>
+            <article class="treat">
+              <div
+                class="ph"
+                role="img"
+                aria-label="Placeholder: hijama at AP Cupping Clinic"
+              >
+                Hijama photo
+              </div>
+              <div class="treat-body">
+                <h3>Hijama (wet cupping)</h3>
+                <p>
+                  Traditional wet cupping with a consultation first and
+                  aftercare advice after.
+                </p>
+                <div class="treat-meta">
+                  <span>From <span class="todo">£[xx]</span></span>
+                </div>
+                <a href="https://apcupping.com/treatments/#cupping"
+                  >More about hijama</a
+                >
+              </div>
+            </article>
+            <article class="treat">
+              <div
+                class="ph"
+                role="img"
+                aria-label="Placeholder: dry cupping treatment"
+              >
+                Dry cupping photo
+              </div>
+              <div class="treat-body">
+                <h3>Dry cupping</h3>
+                <p>
+                  Cupping without incisions, often combined with sports massage.
+                </p>
+                <div class="treat-meta">
+                  <span>From <span class="todo">£[xx]</span></span>
+                </div>
+                <a href="https://apcupping.com/treatments/#cupping"
+                  >More about dry cupping</a
+                >
+              </div>
+            </article>
+            <article class="treat">
+              <div
+                class="ph"
+                role="img"
+                aria-label="Placeholder: dry needling treatment"
+              >
+                Dry needling photo
+              </div>
+              <div class="treat-body">
+                <h3>Dry needling</h3>
+                <p>
+                  Fine needles for tight knots and trigger points, as part of a
+                  treatment plan.
+                </p>
+                <div class="treat-meta">
+                  <span>From <span class="todo">£[xx]</span></span>
+                </div>
+                <a href="https://apcupping.com/treatments/"
+                  >More about dry needling</a
+                >
+              </div>
+            </article>
+            <article class="treat treat--wide treat--full">
+              <div
+                class="ph"
+                role="img"
+                aria-label="Placeholder: signature recovery session"
+              >
+                Recovery session photo
+              </div>
+              <div class="treat-body">
+                <h3>Signature recovery</h3>
+                <p>
+                  Sports massage, mobility work and recovery techniques combined
+                  in one longer session, built for athletes and heavy training
+                  weeks.
+                </p>
+                <div class="treat-meta">
+                  <span>From <span class="todo">£[xx]</span></span>
+                </div>
+                <a href="https://apcupping.com/treatments/#signature-recovery"
+                  >More about signature recovery</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band dark" aria-labelledby="proof-title">
+        <div class="wrap proof">
+          <div
+            class="ph"
+            role="img"
+            aria-label="Placeholder: client recovery video"
+          >
+            Existing client video plays here
+          </div>
+          <div class="stack">
+            <h2 id="proof-title">
+              Sports massage and recovery for Bolton athletes
+            </h2>
+            <p>
+              Professional boxers, footballers and fighters come to our Bolton
+              clinic for sports massage and recovery. So do people who just want
+              their back to stop hurting. Watch real sessions.
+            </p>
+            <ul class="names" aria-label="Who we treat">
+              <li>Professional boxers</li>
+              <li>Footballers</li>
+              <li>MMA fighters</li>
+              <li>Padel players</li>
+              <li>Desk workers</li>
+            </ul>
+            <div class="btn-row">
+              <a
+                class="btn btn-gold"
+                href="https://apcupping.com/results/#client-stories"
+                >Watch client videos</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="band" id="team" aria-labelledby="team-title">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="team-title">
+              Physiotherapists and therapists at AP Cupping Clinic
+            </h2>
+            <p>
+              Senior physios and recovery therapists in one Bolton clinic, so
+              you get a proper assessment and hands-on treatment in one place.
+            </p>
+          </div>
+          <div>
+            <article class="row">
+              <div class="ph" role="img" aria-label="Placeholder: photo of AP">
+                Photo of AP<br />1000 × 1000px
+              </div>
+              <div class="copy">
+                <p class="role">Clinical Director &amp; Founder</p>
+                <h3 style="font-size: 2rem">AP</h3>
+                <p>
+                  AP founded the clinic and leads its cupping, hijama and
+                  athlete recovery work, treating professional fighters and
+                  footballers alongside everyday clients from across Bolton.
+                </p>
+                <ul class="tags">
+                  <li>Cupping &amp; hijama</li>
+                  <li>Sports massage</li>
+                  <li>Athlete recovery</li>
+                </ul>
+                <div class="btn-row">
+                  <a
+                    class="btn btn-line"
+                    href="https://widget.treatwell.co.uk/place/543574/menu/"
+                    target="_blank"
+                    rel="noopener"
+                    >Book with AP</a
+                  >
+                </div>
+              </div>
+            </article>
+            <article class="row">
+              <div
+                class="ph"
+                role="img"
+                aria-label="Placeholder: photo of Muaz"
+              >
+                Photo of Muaz<br />1000 × 1000px
+              </div>
+              <div class="copy">
+                <p class="role">Senior Physiotherapist &amp; PT</p>
+                <h3 style="font-size: 2rem">Muaz</h3>
+                <p>
+                  Muaz combines physiotherapy with personal training, so your
+                  rehab carries on past the treatment table with a strength plan
+                  to get you back to training.
+                </p>
+                <ul class="tags">
+                  <li>Injury rehab</li>
+                  <li>Strength-based recovery</li>
+                  <li>Sports massage</li>
+                </ul>
+                <div class="btn-row">
+                  <a
+                    class="btn btn-line"
+                    href="https://widget.treatwell.co.uk/place/543574/menu/"
+                    target="_blank"
+                    rel="noopener"
+                    >Book with Muaz</a
+                  >
+                </div>
+              </div>
+            </article>
+            <article class="row">
+              <div
+                class="ph"
+                role="img"
+                aria-label="Placeholder: photo of Tasneem"
+              >
+                Photo of Tasneem<br />1000 × 1000px
+              </div>
+              <div class="copy">
+                <p class="role">Senior Physiotherapist, MSK</p>
+                <h3 style="font-size: 2rem">Tasneem</h3>
+                <p>
+                  Tasneem specialises in back, neck and joint pain. She'll find
+                  the cause, treat it, and show you how to stop it coming back.
+                </p>
+                <ul class="tags">
+                  <li>Back &amp; neck pain</li>
+                  <li>Joint pain</li>
+                  <li>MSK rehab</li>
+                </ul>
+                <div class="btn-row">
+                  <a
+                    class="btn btn-line"
+                    href="https://widget.treatwell.co.uk/place/543574/menu/"
+                    target="_blank"
+                    rel="noopener"
+                    >Book with Tasneem</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band cream" id="reviews" aria-labelledby="rev-title">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="rev-title">AP Cupping Clinic reviews on Google</h2>
+            <p>
+              Three of our Google reviews, word for word. Read the rest on our
+              Google profile.
+            </p>
+          </div>
+          <div class="reviews">
+            <figure class="review">
+              <span class="stars" aria-hidden="true">★★★★★</span>
+              <blockquote>
+                <p>[Real Google review from a physio client]</p>
+              </blockquote>
+              <figcaption>[Client first name, area]</figcaption>
+            </figure>
+            <figure class="review">
+              <span class="stars" aria-hidden="true">★★★★★</span>
+              <blockquote>
+                <p>[Real Google review from a hijama client]</p>
+              </blockquote>
+              <figcaption>[Client first name, area]</figcaption>
+            </figure>
+            <figure class="review">
+              <span class="stars" aria-hidden="true">★★★★★</span>
+              <blockquote>
+                <p>
+                  [Real Google review from an athlete or sports massage client]
+                </p>
+              </blockquote>
+              <figcaption>[Client first name, area]</figcaption>
+            </figure>
+          </div>
+          <div class="btn-row" style="margin-top: 28px">
+            <a
+              class="btn btn-line"
+              href="https://www.google.com/maps/place/AP+Cupping+Clinic/@53.567273,-2.4273688,17z/data=!3m1!4b1!4m6!3m5!1s0x487ba725292ef52f:0x26dbd09feeb68b5f!8m2!3d53.567273!4d-2.4247939!16s%2Fg%2F11zbrm_ns1"
+              target="_blank"
+              rel="noopener"
+              >Read all reviews on Google</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="band" aria-labelledby="faq-title">
+        <div class="wrap split">
+          <div class="stack">
+            <h2 id="faq-title">Questions about booking at AP Cupping Clinic</h2>
+            <p>
+              Still not sure? Call AP on 07972 592347 and tell him what's
+              bothering you.
+            </p>
+            <div class="btn-row">
+              <a
+                class="btn btn-gold"
+                href="https://widget.treatwell.co.uk/place/543574/menu/"
+                target="_blank"
+                rel="noopener"
+                >Check availability</a
+              >
+            </div>
+          </div>
+          <div class="faq">
+            <details open>
+              <summary>Do I need a GP referral for physio?</summary>
+              <div>
+                <p>
+                  No. You can book a private physio appointment directly, with
+                  no referral and no waiting list.
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>Should I book physio or a recovery treatment?</summary>
+              <div>
+                <p>
+                  Book physio if you're injured, in pain or need a rehab plan.
+                  Book sports massage or a recovery session for tightness,
+                  training fatigue or maintenance.
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>Is hijama done hygienically?</summary>
+              <div>
+                <p>
+                  Every hijama session starts with a consultation and uses
+                  <span class="todo">[single-use, sterile equipment]</span>,
+                  with aftercare advice afterwards.
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>Can I see a female practitioner?</summary>
+              <div>
+                <p>
+                  <span class="todo"
+                    >[Confirm availability, for example: Yes, Tasneem is
+                    available for physio and hijama. Mention it when you
+                    book.]</span
+                  >
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>Where do I park?</summary>
+              <div>
+                <p>
+                  We're inside Just Padel on Nelson Street, Bolton BL3 2JW.
+                  <span class="todo">[Parking details]</span>
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="band cream" id="find-us" aria-labelledby="find-title">
+        <div class="wrap split">
+          <div class="stack">
+            <h2 id="find-title">Find AP Cupping Clinic in Bolton BL3</h2>
+            <p>
+              We're inside Just Padel on Nelson Street, a few minutes south of
+              Bolton town centre.
+            </p>
+            <address>
+              AP Cupping Clinic<br />Central Business Park, Nelson Street<br />Bolton
+              BL3 2JW
+            </address>
+            <p>
+              <a
+                href="https://www.google.com/maps/place/AP+Cupping+Clinic/@53.567273,-2.4273688,17z/data=!3m1!4b1!4m6!3m5!1s0x487ba725292ef52f:0x26dbd09feeb68b5f!8m2!3d53.567273!4d-2.4247939!16s%2Fg%2F11zbrm_ns1"
+                target="_blank"
+                rel="noopener"
+                >Get directions on Google Maps</a
+              >
+            </p>
+            <table class="hours">
+              <tbody>
+                <tr>
+                  <td>Monday to Friday</td>
+                  <td><span class="todo">[hours]</span></td>
+                </tr>
+                <tr>
+                  <td>Saturday</td>
+                  <td><span class="todo">[hours]</span></td>
+                </tr>
+                <tr>
+                  <td>Sunday</td>
+                  <td><span class="todo">[hours]</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="panel">
+            <h3>Coming from</h3>
+            <ul class="check">
+              <li>
+                <strong>Bolton town centre:</strong> a few minutes' drive south
+              </li>
+              <li>
+                <strong>Farnworth and Kearsley:</strong>
+                <span class="todo">[x]</span> minutes by car
+              </li>
+              <li>
+                <strong>Little Lever and Breightmet:</strong>
+                <span class="todo">[x]</span> minutes by car
+              </li>
+              <li>
+                <strong>Horwich and Westhoughton:</strong>
+                <span class="todo">[x]</span> minutes by car
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="band dark" aria-labelledby="cta-title">
+        <div class="wrap cta">
+          <div class="stack">
+            <h2 id="cta-title">
+              Book sports massage, physio or hijama in Bolton
+            </h2>
+            <p>
+              See live availability at AP Cupping Clinic, or give us a call.
+            </p>
+          </div>
+          <div class="btn-row">
+            <a
+              class="btn btn-gold"
+              href="https://widget.treatwell.co.uk/place/543574/menu/"
+              target="_blank"
+              rel="noopener"
+              >Check availability</a
+            ><a class="btn btn-line" href="tel:+447972592347"
+              >Call 07972 592347</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="stack">
+            <a class="brand" href="#main"
+              ><span class="logo" aria-hidden="true">AP</span
+              ><span class="brand-name">AP Cupping Clinic</span></a
+            >
+            <p>
+              A physiotherapy, sports massage and hijama clinic inside Just
+              Padel, Bolton, helping clients from Bolton, Farnworth, Little
+              Lever, Horwich and Westhoughton.
+            </p>
+          </div>
+          <div>
+            <h2>Treatments</h2>
+            <ul>
+              <li><a href="#treatments">Sports massage</a></li>
+              <li><a href="#treatments">Physiotherapy</a></li>
+              <li><a href="#treatments">Hijama (wet cupping)</a></li>
+              <li><a href="#treatments">Dry cupping</a></li>
+              <li><a href="#treatments">Dry needling</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Clinic</h2>
+            <ul>
+              <li><a href="#team">Our team</a></li>
+              <li><a href="#reviews">Results</a></li>
+              <li><a href="#find-us">Find us</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Contact</h2>
+            <ul>
+              <li><a href="tel:+447972592347">07972 592347</a></li>
+              <li>
+                <a
+                  href="https://www.google.com/maps/place/AP+Cupping+Clinic/@53.567273,-2.4273688,17z/data=!3m1!4b1!4m6!3m5!1s0x487ba725292ef52f:0x26dbd09feeb68b5f!8m2!3d53.567273!4d-2.4247939!16s%2Fg%2F11zbrm_ns1"
+                  target="_blank"
+                  rel="noopener"
+                  >Google Maps</a
+                >
+              </li>
+              <li>
+                <address>
+                  Central Business Park, Nelson Street, Bolton BL3 2JW
+                </address>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-small">
+          <span>© 2026 AP Cupping Clinic</span
+          ><span>Proposal by Kasam Khan Web Consulting</span>
+        </div>
+      </div>
+    </footer>
+
+    <div class="action-bar" aria-label="Quick actions">
+      <a class="btn btn-line" href="tel:+447972592347">Call AP</a>
+      <a
+        class="btn btn-gold"
+        href="https://widget.treatwell.co.uk/place/543574/menu/"
+        target="_blank"
+        rel="noopener"
+        >Book now</a
+      >
+    </div>
+
+    <script>
+      ;(function () {
+        var btn = document.querySelector(".menu-btn"),
+          nav = document.getElementById("site-nav")
+        btn.addEventListener("click", function () {
+          var open = nav.classList.toggle("open")
+          btn.setAttribute("aria-expanded", open ? "true" : "false")
+          btn.textContent = open ? "Close" : "Menu"
+        })
+        nav.addEventListener("click", function (e) {
+          if (e.target.tagName === "A") {
+            nav.classList.remove("open")
+            btn.setAttribute("aria-expanded", "false")
+            btn.textContent = "Menu"
+          }
+        })
+
+        var book = "https://widget.treatwell.co.uk/place/543574/menu/"
+        var data = {
+          injury: {
+            t: "Pain or injury",
+            u: [
+              "Sprains, strains or joint pain",
+              "A niggle that keeps coming back",
+              "Getting back to normal after an injury",
+            ],
+            who: "Muaz or Tasneem, senior physios",
+            start: "Physiotherapy assessment",
+            link: "https://apcupping.com/treatments/#physiotherapy",
+            lt: "More about physio",
+          },
+          tension: {
+            t: "Back, neck or shoulder tension",
+            u: [
+              "Desk stiffness and tight traps",
+              "Lower back ache",
+              "Neck that won't turn properly",
+            ],
+            who: "Tasneem (MSK) or AP",
+            start: "Physio assessment or sports massage",
+            link: "https://apcupping.com/treatments/#sports-massage",
+            lt: "More about sports massage",
+          },
+          training: {
+            t: "Training recovery",
+            u: [
+              "Heavy legs after training",
+              "Tight muscles before a fight or match",
+              "Wanting to recover faster between sessions",
+            ],
+            who: "AP or Muaz",
+            start: "Signature recovery session",
+            link: "https://apcupping.com/treatments/#signature-recovery",
+            lt: "More about recovery",
+          },
+          hijama: {
+            t: "Hijama or cupping",
+            u: [
+              "Traditional wet cupping (hijama)",
+              "Dry cupping alongside massage",
+              "A consultation before your first session",
+            ],
+            who: "AP",
+            start: "Hijama or dry cupping session",
+            link: "https://apcupping.com/treatments/#cupping",
+            lt: "More about hijama",
+          },
+          needling: {
+            t: "Tight knots and trigger points",
+            u: [
+              "Knots that massage alone hasn't shifted",
+              "Muscle tension in the shoulders or back",
+              "Part of a wider physio plan",
+            ],
+            who: "Your physio",
+            start: "Physio assessment with dry needling",
+            link: "https://apcupping.com/treatments/",
+            lt: "More about dry needling",
+          },
+          unsure: {
+            t: "Not sure what you need",
+            u: [
+              "Pain that moves around or comes and goes",
+              "More than one thing bothering you",
+              "You just want someone to have a proper look",
+            ],
+            who: "Any of the team",
+            start: "Call AP on 07972 592347 first",
+            link: "tel:+447972592347",
+            lt: "Call 07972 592347",
+          },
+        }
+        var answer = document.getElementById("answer"),
+          buttons = document.querySelectorAll(".area-btn")
+        function show(k) {
+          var a = data[k]
+          buttons.forEach(function (b) {
+            b.setAttribute("aria-pressed", b.dataset.k === k ? "true" : "false")
+          })
+          answer.innerHTML =
+            '<p class="picked">You picked</p><h3>' +
+            a.t +
+            "</h3><p>This usually covers:</p><ul>" +
+            a.u
+              .map(function (x) {
+                return "<li>" + x + "</li>"
+              })
+              .join("") +
+            '</ul><div class="answer-meta"><span>Who you’ll see: ' +
+            a.who +
+            "</span><span>Start with: " +
+            a.start +
+            '</span></div><div class="btn-row"><a class="btn btn-gold" href="' +
+            book +
+            '" target="_blank" rel="noopener">Check availability</a><a class="btn btn-line" href="' +
+            a.link +
+            '"' +
+            (a.link.indexOf("tel:") ? ' target="_blank" rel="noopener"' : "") +
+            ">" +
+            a.lt +
+            "</a></div>"
+        }
+        buttons.forEach(function (b) {
+          b.addEventListener("click", function () {
+            show(b.dataset.k)
+          })
+        })
+        show("injury")
+      })()
+    </script>
+  </body>
+</html>
